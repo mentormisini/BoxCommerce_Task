@@ -9,21 +9,19 @@ import { take } from 'rxjs';
 })
 export class CurrencyExchangeComponent {
   currencyService = inject(CurrencyService);
-  amount:any;
-  convertedValue:any;
-  public currencyCode = this.currencyService.currencyCode;
-  fromCurrency: any;
-  toCurrency: any;
+  amount!:number;
+  convertedValue:number | string | undefined;
+  currencyCode$ = this.currencyService.currencyCode;
+  fromCurrency!: {value:string};
+  toCurrency!: {value:string};
 
   doExchange() {
     this.currencyService.startExchange(this.fromCurrency.value, this.toCurrency.value)
-      .pipe(
-        take(1)
-      )
+      .pipe(take(1))
       .subscribe((exchangeRate: any) => {
         let rateOf = exchangeRate.exchange_rates[this.toCurrency.value];
         if (this.amount) {
-          this.convertedValue = this.toCurrency.value + ' ' + (this.amount * Number(rateOf.toFixed(2))).toFixed(2);
+          this.convertedValue = (this.amount * Number(rateOf.toFixed(2))).toFixed(2);
         }
       });
   }

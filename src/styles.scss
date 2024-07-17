@@ -1,34 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
 .container {
   margin: 20px;
 }
 .example-card {
   padding: 20px;
 }
-
 .result{
   font-size:20px;
   float:right;
 }
-
-table {
-  width: 100%;
-}
-
-th.mat-header-cell, td.mat-cell {
-  text-align: left;
-}
-
 .divider{
   padding-top:50px;
-}
-button {
-  background-color: #1100ff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: #0056b3;
 }

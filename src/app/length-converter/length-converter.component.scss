@@ -1,26 +1,7 @@
-.converter {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
- 
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input, select, button {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .result-center{
+.result-center{
     display:flex;
     font-size:20px;
     justify-content: center;
     align-items: center;
+    padding-top:20px;
   }

@@ -1,27 +1,28 @@
-# Clapp
+# Currency Exchange and Length Unit Converter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4. and also is PWA
 
-## Development server
+## API Documentation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+As a trial i've used this API: https://docs.abstractapi.com/exchange-rates
 
-## Code scaffolding
+## TASK BoxCommerce
+[Mentor Misini ]
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I completed all acceptance criteria.
 
-## Build
+• Please create a mobile first PWA Angular app with at least 2 components, as follows:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+• Support 2-way conversion i.e. allow the user to change values in either the from or to field
 
-## Running unit tests
+• The design of the code should support adding new units easily.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+• The result should be displayed as user-friendly strings, for example ‘R250.00’, ‘$48.00’, ‘27 yd’ etc.
 
-## Running end-to-end tests
+• Use Angular Material for basic styling (buttons, inputs etc).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+• Use Angular Flex-Layout for basic template layout
 
-## Further help
+• It should be a fully tested app.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+

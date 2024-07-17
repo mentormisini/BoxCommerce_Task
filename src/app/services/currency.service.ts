@@ -9,15 +9,14 @@ export class CurrencyService{
   protected readonly _http = inject(HttpClient);
   private _currencyAPI= 'https://exchange-rates.abstractapi.com/v1/live/?api_key=4b47dc89d2a44e8faccd546b160f173f&'
 
-  startExchange(base:string, target:string):Observable<any>{
+  startExchange(base: string, target: string):Observable<any>{
     return this._http.get(`${this._currencyAPI}/&base=${base}&target=${target}`)
   }
-
-  historicial(base:string,date:any):Observable<any>{
+    historicial(base: number, date: any):Observable<any>{
     return this._http.get(`${this._currencyAPI}/&base=${base}&date=${date}`)
   }
 
-  // i added manually because the free api abstractapi.com doesnt have any specific API for currency codes.
+  // I added manually because the free api abstractapi.com doesn't have any specific API for currency codes.
   public currencyCode: any[] = [
     { value: 'EUR' },
     { value: 'JPY' },
@@ -30,6 +29,7 @@ export class CurrencyService{
     { value: 'RON' },
     { value: 'SEK' },
     { value: 'CHF' },
+    { value: 'USD' },
     { value: 'ISK' },
     { value: 'NOK' },
     { value: 'TRY' },

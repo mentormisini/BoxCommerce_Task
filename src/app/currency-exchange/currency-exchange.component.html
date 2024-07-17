@@ -14,22 +14,25 @@
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>From Currency</mat-label>
           <mat-select [(ngModel)]="fromCurrency">
-            <mat-option *ngFor="let code of currencyCode" [value]="code">{{code.value}}</mat-option>
+            <mat-option *ngFor="let code of currencyCode$"
+                        [value]="code">{{code.value}}</mat-option>
           </mat-select>
         </mat-form-field>
         <br>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>To Currency</mat-label>
           <mat-select [(ngModel)]="toCurrency">
-            <mat-option *ngFor="let code of currencyCode" [value]="code">{{code.value}}</mat-option>
+            <mat-option *ngFor="let code of currencyCode$"
+                        [value]="code">{{code.value}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <button mat-flat-button color="primary" (click)="doExchange()">Exchange</button>
-        <span class="result">{{convertedValue}}</span>
+        <button mat-flat-button color="accent" (click)="doExchange()">Exchange</button>
+        <span class="result" *ngIf="convertedValue">
+          {{convertedValue | currency: toCurrency.value }} </span>
       </mat-card-content>
     </mat-card>
   </div>
-  
+
   <div class="item item-2" fxFlex="calc(100% - 20px)" fxFlex.gt-xs="calc(33.33% - 20px)">
     <app-historical></app-historical>
   </div>

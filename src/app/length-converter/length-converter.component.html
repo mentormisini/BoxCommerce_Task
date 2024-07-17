@@ -1,23 +1,25 @@
-<mat-card class="example-card" appearance="outlined">
+<mat-card appearance="outlined" class="example-card">
   <h2>Length Unit Converter</h2>
-  <mat-form-field class="form-group">
-    <mat-label>Value:</mat-label>
-    <input matInput type="number" [(ngModel)]="value" />
+  <mat-form-field appearance="outline" class="example-form-field" style="width: 100%;">
+    <mat-label>Enter Value</mat-label>
+    <input [(ngModel)]="value" matInput type="number">
   </mat-form-field>
-  <mat-form-field class="form-group">
+  <mat-form-field appearance="outline" style="width: 100%;">
     <mat-label>From Unit:</mat-label>
     <mat-select [(ngModel)]="fromUnit">
       <mat-option *ngFor="let unit of units" [value]="unit">{{ unit }}</mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field class="form-group">
+  <mat-form-field appearance="outline" style="width: 100%;">
     <mat-label>To Unit:</mat-label>
     <mat-select [(ngModel)]="toUnit">
       <mat-option *ngFor="let unit of units" [value]="unit">{{ unit }}</mat-option>
     </mat-select>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="convert()">Convert</button>
+  <button (click)="convert()" color="primary" mat-raised-button style="width:20%">Convert</button>
   <div *ngIf="result !== null">
-    <span class="result-center">Result: {{ result | number:'1.2-2' }}</span>
+    <span class="result-center">Result: {{ result | number:'1.2-2' }} {{ toUnit }}</span>
   </div>
 </mat-card>
+
+
