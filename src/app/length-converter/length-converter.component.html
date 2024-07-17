@@ -1,0 +1,23 @@
+<mat-card class="example-card" appearance="outlined">
+  <h2>Length Unit Converter</h2>
+  <mat-form-field class="form-group">
+    <mat-label>Value:</mat-label>
+    <input matInput type="number" [(ngModel)]="value" />
+  </mat-form-field>
+  <mat-form-field class="form-group">
+    <mat-label>From Unit:</mat-label>
+    <mat-select [(ngModel)]="fromUnit">
+      <mat-option *ngFor="let unit of units" [value]="unit">{{ unit }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="form-group">
+    <mat-label>To Unit:</mat-label>
+    <mat-select [(ngModel)]="toUnit">
+      <mat-option *ngFor="let unit of units" [value]="unit">{{ unit }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="convert()">Convert</button>
+  <div *ngIf="result !== null">
+    <span class="result-center">Result: {{ result | number:'1.2-2' }}</span>
+  </div>
+</mat-card>

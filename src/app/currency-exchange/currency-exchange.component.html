@@ -1,0 +1,40 @@
+<div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="20px">
+  <div class="item item-1" fxFlex="calc(100% - 20px)" fxFlex.gt-xs="calc(33.33% - 20px)">
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Currency Converter</mat-card-title>
+        <span class="divider"></span>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field class="example-form-field" appearance="outline" style="width: 100%;">
+          <mat-label>Enter Amount</mat-label>
+          <input matInput type="text" [(ngModel)]="amount">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>From Currency</mat-label>
+          <mat-select [(ngModel)]="fromCurrency">
+            <mat-option *ngFor="let code of currencyCode" [value]="code">{{code.value}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>To Currency</mat-label>
+          <mat-select [(ngModel)]="toCurrency">
+            <mat-option *ngFor="let code of currencyCode" [value]="code">{{code.value}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-flat-button color="primary" (click)="doExchange()">Exchange</button>
+        <span class="result">{{convertedValue}}</span>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <div class="item item-2" fxFlex="calc(100% - 20px)" fxFlex.gt-xs="calc(33.33% - 20px)">
+    <app-historical></app-historical>
+  </div>
+
+  <div class="item item-3" fxFlex="calc(100% - 20px)" fxFlex.gt-xs="calc(33.33% - 20px)">
+    <app-length-converter></app-length-converter>
+  </div>
+</div>
